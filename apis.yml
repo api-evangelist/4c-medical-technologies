@@ -1,17 +1,34 @@
 aid: 4c-medical-technologies
 name: 4C Medical Technologies
-description: '4C Medical Technologies is a company surfaced via the API Evangelist harvest backlog (source:
-  secondary-market) and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  4C Medical Technologies, Inc. is a privately held, clinical-stage medical device company
+  headquartered at 6655 Wedgwood Road North, Suite 160, Maple Grove, Minnesota, developing
+  minimally invasive therapies for structural heart disease. Its lead product is the AltaValve
+  System, a supra-annular transcatheter mitral valve replacement (TMVR) device delivered by
+  transseptal or transapical catheter and designed to expand the treatable severe mitral
+  regurgitation patient population, streamline the procedure and preserve the native mitral
+  valve; the device is fully recapturable until released from the delivery catheter. AltaValve
+  holds FDA Breakthrough Device designation and is enrolling the ATLAS global pivotal trial
+  (NCT06465745) in the United States and Europe. The company closed a $175M Series D financing
+  led by Boston Scientific in March 2025. It is a physical medical device manufacturer and
+  publishes no developer program, public API, SDK or machine-readable API contract of any kind.
+image: https://static1.squarespace.com/static/5d44355a750fb500017eb6d6/t/5d4469ce32542a0001da654f/1663268739947/4C%2Blogo%2Bwhite.jpg?format=1500w
 url: https://raw.githubusercontent.com/api-evangelist/4c-medical-technologies/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
 x-tier: stub
-x-tier-reason: harvest
+x-tier-reason: no-api-surface
 specificationVersion: '0.20'
 created: '2026-09-05'
 modified: '2026-09-05'
 tags:
 - Company
+- Medical Devices
+- Health
+- Cardiology
+- Structural Heart
+- Medical Technology
+- Clinical Trials
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +36,34 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/4c-medical-technologies-domain-security.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://www.4cmed.com/
+- type: Blog
+  url: https://www.4cmed.com/news
+x-enrichment:
+  date: '2026-09-05'
+  status: minimal
+  artifacts_added: 2
+  pass: local-v3
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: >-
+    4C Medical Technologies is a clinical-stage cardiac device manufacturer whose product is a
+    physical implant (the AltaValve TMVR system); its entire web presence is an 11-page
+    Squarespace marketing site with no developer, docs, or API section, and api/developer/dev/
+    docs/portal.4cmed.com do not resolve in DNS.
+  evidence:
+  - url: https://www.4cmed.com/sitemap.xml
+    status: 200
+  - url: https://www.4cmed.com/.well-known/security.txt
+    status: 404
+  - url: https://www.4cmed.com/openapi.json
+    status: 404
+  - url: https://www.4cmed.com/.well-known/agent-card.json
+    status: 404
+  - url: https://api.github.com/orgs/4cmedical
+    status: 404
+  checked: '2026-09-05'

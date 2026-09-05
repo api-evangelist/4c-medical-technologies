@@ -1,0 +1,82 @@
+generated: '2026-09-05'
+method: probed
+source: live GET of the named /.well-known/ path list on every host this record knows
+note: >-
+  4C Medical Technologies runs a single Squarespace-hosted marketing site at www.4cmed.com and
+  publishes no API, so there is no API baseURL host, no OpenAPI servers[] host and no docs or
+  console host to add to this probe set. The apex 4cmed.com 301-redirects every path to www.
+  Every named discovery path returned 404 on the canonical host: /.well-known/security.txt
+  returns a Squarespace JSON body {"message":"security.txt not found"}; every other path returns
+  the site's 69,273-byte HTML 404 page. NO WellKnown and NO SecurityTxt pointer is emitted —
+  this file records a measured absence, not a served surface.
+hit_count: 0
+path_echo_control: passed
+soft_404_control:
+  path: /.well-known/4c-medical-technologies-negative-control-7f3ab91c.json
+  status: 404
+  bytes: 69273
+  note: >-
+    A path that cannot exist returns the same 404 as every real path, so this host is not
+    path-echoing and not answering 2xx catch-all. The negatives below are trustworthy.
+hosts:
+- host: https://www.4cmed.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/ucp.json
+    status: 404
+  - path: /.well-known/acp.json
+    status: 404
+  - path: /.well-known/aauth-resource.json
+    status: 404
+  - path: /.well-known/apis.json
+    status: 404
+  - path: /apis.json
+    status: 404
+  - path: /apis.yml
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://4cmed.com
+  note: apex host; 301-redirects every probed path to https://www.4cmed.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 301
+  - path: /.well-known/openid-configuration
+    status: 301
+  - path: /.well-known/oauth-authorization-server
+    status: 301
+  - path: /.well-known/oauth-protected-resource
+    status: 301
+  - path: /.well-known/api-catalog
+    status: 301
+  - path: /.well-known/ai-plugin.json
+    status: 301
+  - path: /.well-known/ucp.json
+    status: 301
+  - path: /.well-known/acp.json
+    status: 301
+  - path: /.well-known/aauth-resource.json
+    status: 301
+  - path: /.well-known/apis.json
+    status: 301
+  - path: /apis.json
+    status: 301
+  - path: /apis.yml
+    status: 301
+  - path: /.well-known/agent-card.json
+    status: 301
+  - path: /.well-known/agent.json
+    status: 301
